@@ -4,8 +4,8 @@ class Api::ContactsController < ApplicationController
     render "index.json.jb"
   end
 
-  def one_contact_action
-    @contact = Contact.first
-    render "one_contact.json.jb"
+  def show
+    @contact = Contact.find_by(id: params[:id])
+    render "show.json.jb"
   end
 end
